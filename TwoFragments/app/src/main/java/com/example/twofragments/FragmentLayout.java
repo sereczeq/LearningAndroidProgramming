@@ -145,7 +145,8 @@ public class FragmentLayout extends FragmentActivity {
 
                 //
                 getSupportFragmentManager().beginTransaction()
-                        .add(android.R.id.content, details).commit();
+                        .add(android.R.id.content, details)
+                        .commit();
             }
         }
 
@@ -386,16 +387,15 @@ public class FragmentLayout extends FragmentActivity {
                     details = DetailsFragment.newInstance(index);
 
                     Toast.makeText(getActivity(),
-                            "showDetails dual-pane: create and relplace fragment",
+                            "showDetails dual-pane: create and replace fragment",
                             Toast.LENGTH_LONG).show();
 
                     // Execute a transaction, replacing any existing fragment
                     // with this one inside the frame.
-                    FragmentTransaction ft = getFragmentManager()
-                            .beginTransaction();
-                    ft.replace(R.id.details, details);
-                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                    ft.commit();
+                    getParentFragmentManager().beginTransaction()
+                    .replace(R.id.details, details)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    .commit();
                 }
 
             } else {
