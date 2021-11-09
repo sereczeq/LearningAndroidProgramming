@@ -14,7 +14,7 @@
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        class="com.example.twofragments.FragmentLayout$TitlesFragment" />
+        class="com.example.twofragments.TitlesFragment" />
 <!--        class="edu.dartmouth.cs.fragments.FragmentLayout$TitlesFragment" />-->
 
     <FrameLayout
